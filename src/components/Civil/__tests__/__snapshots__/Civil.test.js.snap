@@ -2,6 +2,7 @@
 
 exports[`<Civil />  should are working Methods in Civil 1`] = `
 <Civil
+  Sort={[MockFunction]}
   data={
     Array [
       1,
@@ -33,6 +34,7 @@ exports[`<Civil />  should are working Methods in Civil 1`] = `
   }
 >
   <ListAge
+    Sort={[Function]}
     blockName="_civil"
     elem="civilizations"
     propsUrl="some http..."

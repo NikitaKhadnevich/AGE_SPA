@@ -53,7 +53,7 @@ describe('<Civil /> ', () => {
       const store = mockStore(initialState) // Put contain into Stor
       const civil = store.getState().data //useSelector
       const props = { match: { url: 'some http...' }} // add Props
-   
+      const Sort = jest.fn('hello')
 
       const getFetch = (url, path, res) => {
          if ( Boolean(res) == false) {
@@ -67,8 +67,8 @@ describe('<Civil /> ', () => {
 
       const wrapper = mount(
          // <Provider store={store}>
-            <Civil data={civil} getFetch={getFetch} useEffect={mockFnEffect} {...props}/>
-         //* </Provider> */}
+            <Civil data={civil} getFetch={getFetch} useEffect={mockFnEffect} {...props} Sort={Sort} />
+         // {/* </Provider> */}
       );
       expect(wrapper).toMatchSnapshot();
    })

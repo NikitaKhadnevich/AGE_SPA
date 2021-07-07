@@ -34,7 +34,22 @@ const CivInfo = (props) => {
       targetPath ?
       dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(targetPath)) : null
    }
+         //^^^^
+         //Сначала была такая логика
+         // const targetUnit = data[e.target.id-1].unique_unit
+         // const targetTech = data[e.target.id-1].unique_tech
+         // (targetPath == 'unique_tech' && targetTech.length > 0) ?
+         // dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(targetPath)) : null
+         // dispatches(ACTION_GET_CIVIL_DETAIL_FAILED('Данный юнит не существует'))
+         // где id = это порядковый номер элемента массива
+         //Затем я заменил на CivilInfoStupid map и потребность в диспатче еррора отпала, ибо если нет unique, то она просто не рисует кнопки
+         
+   //1. Пройтись по масиву и забрать уникальное значение
+   //2ю задиспатчить его уже в имеющийся новый массив
 
+   // вставлю линку даты и создам новый стор для юниов 
+   // путем распаршивания ее через джоин(например)
+   // а уже потом у меня будет линковаться все как нужно
    const handleLocation = () => {
       history.push('/civilizations');
    }

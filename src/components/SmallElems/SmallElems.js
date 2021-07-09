@@ -111,6 +111,5 @@ export const SortStructure = (data) => {
    return [...new Set(data.map((item, i) => item.name))];
 }
 
-
 export default HomePage
 

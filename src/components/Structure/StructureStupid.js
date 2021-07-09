@@ -10,7 +10,7 @@ export const StructureStupid = (props) => {
       <div key={'Items'+structureInfo} className={'items'+structureInfo} >
          <p key={item.name+structureInfo+'name'}>Имя: {item.name}</p>
          <p key={item.age+structureInfo}>Фракция: {item.age}</p>
-         <p key={item.build_time+structureInfo}>Время постройки {item.build_time}</p>
+         <p key={item.build_time+structureInfo}>Время постройки: {item.build_time}</p>
          <p key={item.cost+structureInfo}>Стоимость: {item.cost.Wood} древесины</p>
          <p id='liHit' key={item.hit_points+structureInfo}>Единицы здоровья: {item.hit_points}</p>
          { item.pne_of_sight ? <p key={item.pne_of_sight+structureInfo}>Обзор: {item.pne_of_sight}</p> : null }

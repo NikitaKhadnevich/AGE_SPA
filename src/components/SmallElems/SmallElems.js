@@ -1,10 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Router } from 'react-router';
 import {Switch, Route, Link } from 'react-router-dom';
 import { Civilerror } from '../../ducks/civil/selectors'
+import githubImg from '../../assets/images/github.svg'
+import linkedinImg from '../../assets/images/linked.svg'
+import fbImg from '../../assets/images/fb.svg'
+import emailImg from '../../assets/images/email.com.svg'
 
-export  const indicator = {
+export const indicator = {
    civil: '_civil',
    civInfo: '_civInfo',
    civDetailinfo: '_civDetail',
@@ -24,6 +27,14 @@ export  const indicator = {
    unitDetailInfo: '_unitDetailInfo',
    untiStupid: '_untiStupid'
 }
+
+const socialLinks = {
+   git: "https://github.com/NikitaKhadnevich/AGE_SPA",
+   linkedin: "https://www.linkedin.com/in/nikitakhadnevich/",
+   fb: "https://www.facebook.com/nikita.khadnevich",
+   email: "mailto:nikita.khadnevich@gmail.com?subject=Вопрос по Age Of Emperies II"
+}
+
 
 const  HomePage = () => {
    return (
@@ -72,7 +83,7 @@ export const ListAge = (props) => {
       </div>
    )
 }
-
+/****** ACTION FOR BUTTONS ******** */
 export const ButtonGoBack = (props) => {
    const { handleLocation, idName,  indicator } = props
    return (
@@ -100,6 +111,7 @@ export const ButtonClose = (props) => {
    )  
 }
 
+/****** SORT MAIN LIST ELEMENTS ******** */
 export const Sort = (data) => {
    const sortArr = (a,b) => a.name > b.name ? 1 : -1;
    return data.sort(sortArr)
@@ -109,6 +121,32 @@ export const SortStructure = (data) => {
    const sortArr = (a,b) => a.name > b.name ? 1 : -1;
    data.sort(sortArr)
    return [...new Set(data.map((item, i) => item.name))];
+}
+
+/****** ACTION FOR SPINER (SHOW/HIDE) ******** */
+export const SpinerStupid = () => {
+   return (
+      <>
+      <div className="blocks">
+         <div className="block orange"></div>
+         <div className="block blue"></div>
+      </div>
+      </>
+   )
+}
+/****** ACTION FOR FOOTER (SHOW/HIDE) ******** */
+export const FooterStupid = () => {
+  const { git, linkedin, fb, email } = socialLinks
+   return (
+      <>
+      <div className='social'>
+         <a href={git} target="_blank" ><img src={githubImg} alt="github"/></a>
+         <a href={linkedin} target="_blank"><img src={linkedinImg} alt="linkedin"/></a>
+         <a href={fb} target="_blank"><img src={fbImg} alt="facebook"/></a>
+         <a href={email} target="_blank"><img src={emailImg} alt="facebook"/></a>
+      </div>
+      </>
+   )
 }
 
 export default HomePage

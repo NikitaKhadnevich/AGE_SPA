@@ -16,7 +16,17 @@
   padding: 0;
 }
 
-.SubContent button {
+/* .SubContent img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  border: #f1f1f1 1px solid;
+} */
+
+/* Расширяемая логика на случай использования элементов для экшенов пользователя ******* */
+/* .SubContent button {
   font-weight: bold;
   margin-top: 30px;
   color: #f1f1f1;
@@ -30,13 +40,6 @@
 .SubContent button:hover {
   background-color: #f1f1f1;
   color: #000000c0;
-}
+} */
 
-.SubContent img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  display: block;
-  margin: 15px auto;
-  border: #f1f1f1 1px solid;
-}
+

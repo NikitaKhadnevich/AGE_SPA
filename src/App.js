@@ -16,12 +16,14 @@ import StructureInfo from './components/Structure/StructureInfo';
 import Technologies from './components/Technologies/Technologies'
 import TechInfo from './components/Technologies/TechInfo'
 
+import Footer from './components/Footer/Footer'
 
-const App = () => {
+
+const Posts = () => {
   return (
     <>
       <Router>
-        <div className='Posts'>
+        <div className='posts'>
           <div className='navigation'>
             <Link to='/'>К истокам</Link>
             <Link to='/civilizations' data-path='/civilizations'>Цивилизации</Link>
@@ -50,4 +52,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Posts;

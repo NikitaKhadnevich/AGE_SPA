@@ -8,14 +8,20 @@ body {
    background-color: rgba(0, 0, 0, 1);
 }
 
-.videoTag {
-   z-index: 0;
-   height: auto;
-   width: auto;
-   float: left;
+.main {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   justify-content: space-between
+}
+
+#backgroundVideo {
+   position: absolute;
+   width: 100%;
    top: 0;
-   padding: none;
-   position: fixed;
+   object-fit: cover;
+   z-index: -1;
+
 }
 
 a {
@@ -44,11 +50,11 @@ ul {
    padding: 2%;
    border-radius: 15px;
    display: block;
-   width: 80%;
+   width: 90%;
    margin: 0 auto;
    background-color: rgba(0, 0, 0, 0.40);
    color: rgba(255, 254, 254, 0.86);
-   font-size: 2em;
+   font-size: 1.8em;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -85,11 +91,9 @@ ul {
    background-color: rgba(255, 242, 0, 0.700);
 }
 
-.Posts {
-   height: 100vh;
+.posts {
    width: 90%;
    margin: 0 auto;
-   z-index: 3;
 }
 
 .items_civInfo , .items_unitSkil , .items_structureInfo , .items_techInfo {
@@ -303,13 +307,25 @@ ul {
 .skilsWrap > li:first-child , #Skils > li:first-child {
    margin-top: 10%;
 }
-
-.skilsWrap > button , #Skils > button {
+button {   
    display: flex;
    justify-content: center;
+   align-items: center;
    width: 40px;
+   height: 40px;
    margin: 0 auto;
    margin-top: 20px;
+   background-color: black;
+   border: white solid 3px;
+   border-radius: 5px;
+   color: white;
+   transition: 0.5s;
+}
+
+button:hover {
+   transition: 0.5s;
+   transform: scale(1.1);
+   background: rgb(255, 64, 102);;
 }
 
 .blocks {
@@ -366,4 +382,38 @@ ul {
       transition: 0.4s;
       transform: translateX(calc(var(--sz) * -1 - calc(var(--hm) / 4)));
    }
+   }
+
+/* Footer */
+   .social {
+      display: flex;
+      max-height: 100px;
+      justify-content: space-evenly;
+      width: 30%;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      align-self: flex-end;   
+   }
+
+   .social > a {
+      background-color: rgb(255, 255, 255);
+      height: 40px;
+      width: auto;
+      border-radius: 100%;
+      margin: 0;
+   }
+
+   .social > a > img{
+      background-color: rgb(255, 255, 255);
+      height: 100%;
+      border-radius: 100%;
+      width: auto;
+      transition: 0.5s;
+   }
+
+   .social > a > img:hover {
+      transition: 0.5s;
+      transform: scale(1.1);
+      background-color: rgb(255, 64, 102);
    }

@@ -22,9 +22,12 @@ describe('<Spinner>', () => {
 
    it('Is Spinner render correctly', () => {
       const props = { title: 'Render correctly!'}
+      const myMock = () => {
+         return <p>Render some data from smallElem</p>
+      }
       const wrapper = mount(
          <Provider store={store} >
-            <SpinnerHome {...props}/>
+            <SpinnerHome smallElem={myMock} {...props} />
          </Provider>
       )
    expect(wrapper).toMatchSnapshot()
@@ -35,33 +38,39 @@ describe('<Spinner>', () => {
       const fetchingState = jest.fn();
       const wrapper = mount(
          <Provider store={store} >
-            <SpinnerHome fetchingState={fetchingState()}/>
+            <SpinnerHome smallElem={fetchingState}/>
          </Provider>
       )
       expect(fetchingState).toBeCalled()
    })
 
    it('should to find P-element is String', () => {
-      const props = {
-         title: 'Truthy'
+      const myMock = () => {
+         return (
+         <div>
+            <p>This text is string</p>
+         </div> )
       }
       const wrapper = mount(
          <Provider store={store} >
-            <SpinnerHome {...props} />
+            <SpinnerHome smallElem={myMock}/>
          </Provider>
       )
       expect(typeof (wrapper.find("p").text()) == 'string').toBe(true)
    })
 
    it('check is P-element', () => {
-      const props = {
-            title: "Waiting"
+      const myMock = () => {
+         return (
+         <div>
+            <p>String includes exactly this string</p>
+         </div> )
       }
       const wrapper = mount(
          <Provider store={store} >
-            <SpinnerHome {...props}/>
+            <SpinnerHome smallElem={myMock}/>
          </Provider>
       )
-      expect(wrapper.find("p").text()).toEqual('Waiting');
+      expect(wrapper.find("p").text()).toEqual('String includes exactly this string');
    })
 })

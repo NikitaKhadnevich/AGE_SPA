@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 import { watchCivilSaga, watchCivilDetailSaga } from '../ducks/civil/sagas';
 import { watchUNITSaga, watchDETAILSaga } from '../ducks/units/sagas';
-import { watchSTRUSaga, watchStruDETAILSaga } from '../ducks/structures/sagas';
+import { watchSTRUSaga, /*watchStruDETAILSaga*/ } from '../ducks/structures/sagas';
 import { watchTechSaga, watchTechDetailSaga } from '../ducks/technologies/sagas';
 
 function* rootSaga() {
@@ -11,7 +11,7 @@ function* rootSaga() {
     watchUNITSaga(),
     watchDETAILSaga(),
     watchSTRUSaga(),
-    watchStruDETAILSaga(),
+    /*watchStruDETAILSaga(),*/
     watchTechSaga(),
     watchTechDetailSaga()
   ]);

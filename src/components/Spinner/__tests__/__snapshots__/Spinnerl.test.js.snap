@@ -13,31 +13,13 @@ exports[`<Spinner> Is Spinner render correctly 1`] = `
     }
   }
 >
-  <Connect(SpinnerHome)
+  <SpinnerHome
+    smallElem={[Function]}
     title="Render correctly!"
   >
-    <SpinnerHome
-      dispatch={[Function]}
-      isFetchingCivil={true}
-      isFetchingStru={true}
-      isFetchingTech={true}
-      isFetchingUnit={true}
-      title="Render correctly!"
-    >
-      <div
-        className="blocks"
-      >
-        <p>
-          Render correctly!
-        </p>
-        <div
-          className="block orange"
-        />
-        <div
-          className="block blue"
-        />
-      </div>
-    </SpinnerHome>
-  </Connect(SpinnerHome)>
+    <p>
+      Render some data from smallElem
+    </p>
+  </SpinnerHome>
 </Provider>
 `;

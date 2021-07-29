@@ -10,7 +10,7 @@ export const UnitsStupid = (props) => {
 
    return (
       <>
-      <p key={item.name+unitSkil}>Имя юнита {item.name}</p>
+      <p key={item.name+unitSkil}>Имя: {item.name}</p>
       <p key={item.accuracy+unitSkil}>Точность: {item.accuracy}</p>
       { item.reload_time ? <p key={item.reload_time+unitSkil}>Время перезарядки: {item.reload_time} сек.</p>: null }
       <p key={item.movement_rate+unitSkil+'movement'}>Скорость передвижения: {item.movement_rate}</p>

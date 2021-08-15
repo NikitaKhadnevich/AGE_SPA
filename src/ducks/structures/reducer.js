@@ -6,14 +6,14 @@
 //   GET_STRU_DETAIL_SUCCEED,
 //   GET_STRU_DETAIL_FAILED } from './actions';
 
-export const initialStruState = {
-  dataSTRU: [],
-  dataSTRUDetail: [],
-  error: null,
-  url: '',
-  isFetching: false,
-  path: ''
-};
+// export const initialStruState = {
+//   dataSTRU: [],
+//   dataSTRUDetail: [],
+//   error: null,
+//   url: '',
+//   isFetching: false,
+//   path: ''
+// };
 
 // export const structures = (state = initialStruState, action) => {
 //   switch (action.type) {

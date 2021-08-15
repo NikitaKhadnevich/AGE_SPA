@@ -21,7 +21,6 @@ const Structures = (props) => {
     } else null
   }
 
-
   useEffect(() => {
     getFetch(baseUrl, structures, data)
   }, []);

@@ -16,6 +16,7 @@ export function* getSTRUSaga({ payload }) {
       }
       );
     const res = yield stru.json();
+    console.log(`payload`, payload)
 
     /* yield put(ACTION_GET_STRU_Succeed(res)); // Через классические ducks */
     yield put(GET_STRU_SUCCEED(res)); // Redux-toolkit

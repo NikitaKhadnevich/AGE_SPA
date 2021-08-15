@@ -23,12 +23,14 @@ export const structures = createSlice(
          GET_STRU_SUCCEED: (state, action) => {
             state,
             state.dataSTRU = action.payload.structures,
-            state.isFetching = false
+            state.isFetching = false,
+            state.url = ''
          },
          GET_STRU_FAILED: (state, action) => {
             state,
             state.error = action.error,
-            state.isFetching = false
+            state.isFetching = false,
+            state.url = ''
          }
       }
    }

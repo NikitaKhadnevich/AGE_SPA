@@ -118,22 +118,32 @@ export const Sort = (data) => {
 }
 
 export const SortStructure = (data) => {
-   const sortArr = (a,b) => a.name > b.name ? 1 : -1;
-   data.sort(sortArr)
-   return [...new Set(data.map((item, i) => item.name))];
+   // const sortArr = (a,b) => a.name > b.name ? 1 : -1;
+   // data.sort(sortArr)
+   // return [...new Set(data.map((item, i) => item.name))];
+      // ч
+      // data.forEach((element,i) => {
+      //    console.log(element)
+      // });
+    
+      const setArr = [...new Set(data.map((item, i) => item.name))];
+      const sortArr = (a,b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1;
+      return setArr.sort(sortArr)
 }
 
 /****** ACTION FOR SPINER (SHOW/HIDE) ******** */
 export const SpinerStupid = () => {
    return (
       <>
-      <div className="blocks">
-         <div className="block orange"></div>
-         <div className="block blue"></div>
-      </div>
+         <div className="blocks">
+            <div className="block orange"></div>
+            <div className="block blue"></div>
+            <div>Пару мгновений, Милорд</div>
+         </div>   
       </>
    )
 }
+
 /****** ACTION FOR FOOTER (SHOW/HIDE) ******** */
 export const FooterStupid = () => {
   const { git, linkedin, fb, email } = socialLinks

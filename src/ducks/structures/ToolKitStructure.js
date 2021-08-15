@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+// export { initialStruState } from './reducer'
 
 export const initialStruState = {
    dataSTRU: [],
@@ -21,7 +22,7 @@ export const structures = createSlice(
          },
          GET_STRU_SUCCEED: (state, action) => {
             state,
-            state.dataSTRU = action.response,
+            state.dataSTRU = action.payload.structures,
             state.isFetching = false
          },
          GET_STRU_FAILED: (state, action) => {

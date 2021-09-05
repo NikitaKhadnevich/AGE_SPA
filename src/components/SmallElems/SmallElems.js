@@ -1,11 +1,14 @@
-import React from 'react';
+
+import {Link } from 'react-router-dom';
+import React, { useState } from 'react';
+
 import { useSelector } from 'react-redux';
-import {Switch, Route, Link } from 'react-router-dom';
-import { Civilerror } from '../../ducks/civil/selectors'
+
 import githubImg from '../../assets/images/github.svg'
 import linkedinImg from '../../assets/images/linked.svg'
 import fbImg from '../../assets/images/fb.svg'
 import emailImg from '../../assets/images/email.com.svg'
+
 
 export const indicator = {
    civil: '_civil',
@@ -35,7 +38,6 @@ const socialLinks = {
    email: "mailto:nikita.khadnevich@gmail.com?subject=Вопрос по Age Of Emperies II"
 }
 
-
 const  HomePage = () => {
    return (
       <>
@@ -50,25 +52,61 @@ const  HomePage = () => {
 
 export const ListAge = (props) => {
    const { data, blockName, elem, propsUrl, SortStructure, Sort } = props
+   const [filterData, setFilter] = useState('')
+
+   const ValueFromInput = (e) => {
+      e.preventDefault()
+      const inputs = e.target.value
+
+      const filtredFunc = (arr) => {
+         const filtredArr = arr.filter(item => (item.name.toLowerCase().includes(inputs) || item.name.includes(inputs)));
+         setFilter(filtredArr)
+      }
+      filtredFunc(data)
+   }
+
+   const ClearInput = (e) => {
+      e.target.value = ''
+      setFilter('')
+   }
+
    return (
+      <>
+      { data ? <div className='filter'>
+         <input className='filter input' name='serach' type='text' placeholder='Что найти, Правитель?' onChange={ValueFromInput} onBlur={ClearInput}/>
+      </div> : null
+      }
+
       <div key={elem+'Wrapper'} className={elem+'Wrapper'}>
-      { elem == 'structures' ? 
+      { (elem == 'structures' && filterData.length === 0) ? 
          <>
          {data && SortStructure(data).map((item, i) => 
-               
                {
                   return (
                      <div id={item.name} key={i+elem} className={elem+'Item'}>
                         <Link to={`${propsUrl}/${item}`}>{item}</Link> 
-                     </div>   
+                     </div>
                   )
                }
             )
-         }
+         } 
          </> :
+         (elem == 'structures' && filterData.length !== 0) ? 
          <>
-
-            {data && Sort(data).map((item, i) => 
+         {filterData && SortStructure(filterData).map((item, i) => 
+               {
+                  return (
+                     <div id={item.name} key={i+elem} className={elem+'Item'}>
+                        <Link to={`${propsUrl}/${item}`}>{item}</Link> 
+                     </div>
+                  )
+               }
+            )
+         } 
+         </> : 
+         (elem !== 'structures' && filterData.length === 0) ?
+         <>
+         {data && Sort(data).map((item, i) => 
                {
                   return (
                      <div id={item.name} key={i+elem} className={elem+'Item'}>
@@ -78,11 +116,26 @@ export const ListAge = (props) => {
                }
             )
          }
-         </>
-      }
+         </> :
+         (elem !== 'structures' && filterData.length !== 0) ?
+         <>
+         {data && Sort(filterData).map((item, i) => 
+               {
+                  return (
+                     <div id={item.name} key={i+elem} className={elem+'Item'}>
+                        <Link to={`${propsUrl}/${item.name}${item.id}`}>{item.name}</Link>
+                     </div>
+                  )
+               }
+            )
+         }
+         </> : null
+      }  
       </div>
+      </>
    )
 }
+
 /****** ACTION FOR BUTTONS ******** */
 export const ButtonGoBack = (props) => {
    const { handleLocation, idName,  indicator } = props
@@ -114,7 +167,8 @@ export const ButtonClose = (props) => {
 /****** SORT MAIN LIST ELEMENTS ******** */
 export const Sort = (data) => {
    const sortArr = (a,b) => a.name > b.name ? 1 : -1;
-   return data.sort(sortArr)
+   const sortData = data.sort(sortArr)
+   return sortData
 }
 
 export const SortStructure = (data) => {
@@ -138,7 +192,7 @@ export const SpinerStupid = () => {
          <div className="blocks">
             <div className="block orange"></div>
             <div className="block blue"></div>
-            <div>Пару мгновений, Милорд</div>
+            <div className="block text">Пару мгновений, Милорд</div>
          </div>   
       </>
    )

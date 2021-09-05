@@ -5,10 +5,11 @@ import {
   GET_CIVIL_REQUESTED_DETAIL,
   GET_CIVIL_DETAIL_SUCCEED,
   GET_CIVIL_DETAIL_FAILED,
-  GET_ROUTE_MENU} from './actions';
+  GET_ROUTE_MENU, GET_FILTER_MENU} from './actions';
 
 export const initialCivilState = {
   data: [],
+  forFilter: '',
   dataDetail: [],
   error: null,
   url: '',

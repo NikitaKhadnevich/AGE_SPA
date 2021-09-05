@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ACTION_GET_CIVIL_Requested } from '../../ducks/civil/actions';
+import { ACTION_GET_CIVIL_Requested, ACTION_GET_FILTER_MENU } from '../../ducks/civil/actions';
 import { Civildata } from '../../ducks/civil/selectors'
 import  { baseUrl, Urlpath } from '../Api/Api'
 import { indicator, ListAge, Sort } from '../SmallElems/SmallElems'
@@ -25,10 +25,9 @@ const Civil = (props) => {
 
   return (
     <>
-      <ListAge data={data} blockName={civil} elem={civilizations} propsUrl={propsUrl} Sort={Sort}/>
+      <ListAge data={data} blockName={civil} elem={civilizations} propsUrl={propsUrl} Sort={Sort} />
     </>
   )
 };
 
 export default Civil
-

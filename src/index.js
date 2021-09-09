@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { debugContextDevtool } from 'react-context-devtool';
+
 import './index.css'
+import './components/Structure/structure.css'
+
 import AppWithBackgroundVideo from './assets/BackVideo'
 import store from './store';
 const container = document.getElementById('root');

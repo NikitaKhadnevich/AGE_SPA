@@ -4,6 +4,7 @@ import { ACTION_GET_CIVIL_Requested, ACTION_GET_FILTER_MENU } from '../../ducks/
 import { Civildata } from '../../ducks/civil/selectors'
 import  { baseUrl, Urlpath } from '../Api/Api'
 import { indicator, ListAge, Sort } from '../SmallElems/SmallElems'
+import {BrowserRouter as Router, Switch, Route, useHistory, useParams} from 'react-router-dom'
 
 
 const Civil = (props) => {
@@ -12,6 +13,7 @@ const Civil = (props) => {
   const dispatches = useDispatch();
   const { civil } = indicator;
   const propsUrl = props.match.url
+  const params = useParams()
 
   const getFetch = (url, path, arr) => {
     if (!arr) {

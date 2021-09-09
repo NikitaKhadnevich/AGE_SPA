@@ -64,7 +64,7 @@ ul {
    color: rgb(220, 203, 20)
 }
 
-#goback_civInfo , #goback_unitSkil, #goback_structureInfo, #goback_techInfo{
+#goback_civInfo , #goback_unitSkil, #goback_techInfo{
    font-size: 1em;
    color: rgb(255, 255, 255);
    display: block;
@@ -85,10 +85,6 @@ ul {
    background-color: rgb(0, 154, 185);
 }
 
-#goback_structureInfo {
-   background-color: rgb(48, 125, 48);
-}
-
 #goback_techInfo {
    background-color: rgba(255, 242, 0, 0.700);
 }
@@ -98,7 +94,7 @@ ul {
    margin: 0 auto;
 }
 
-.items_civInfo , .items_unitSkil , .items_structureInfo , .items_techInfo {
+.items_civInfo , .items_unitSkil , .items_techInfo {
    display: grid;
    grid-template-columns: 1fr;
    grid-gap: 5px;
@@ -128,17 +124,12 @@ ul {
    background-color: rgba(255, 242, 0, 0.250);
 }
 
-.items_civInfo > p , .items_unitSkil > p , .items_structureInfo > p , .items_techInfo > p{ 
+.items_civInfo > p , .items_unitSkil > p , .items_techInfo > p{ 
    text-align: center;
    text-decoration: none;
    color: rgb(255, 255, 255);
    font-size: 2em;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.items_structureInfo {
-   margin-bottom: 10px;
-   background-color: rgba(48, 125, 48, 0.8);
 }
 
 .civilizationsItem , .civilizationsItem2 , .Item , .unitsItem , .technologiesItem { 
@@ -183,7 +174,6 @@ ul {
    padding: 5px;
    text-decoration: none;
    font-size: 2em;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    transition-duration: .3s;
 }
 

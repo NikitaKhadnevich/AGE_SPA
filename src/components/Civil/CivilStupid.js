@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { indicator, ButtonClose } from '../SmallElems/SmallElems'
 const { civil, civInfo, civDetailinfo, civilStupid } = indicator
-import { Civilerror } from '../../ducks/civil/selectors'
+import { Civilerror, CivildataDetail } from '../../ducks/civil/selectors'
 
 
 export const CivilInfoStupid = (props) => {

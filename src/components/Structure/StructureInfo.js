@@ -20,6 +20,7 @@ const StructureInfo = (props) => {
       if (!arr) {
          dispatches(ACTION_GET_STRU_Requested(`${url}/${path}`));
       } else return null
+      
    }
 
    useEffect(() => {
@@ -30,18 +31,27 @@ const StructureInfo = (props) => {
       history.push('/structures')
    }
 
+
+
    return (
-      <div key={'Wrapper'+structureInfo}>
+      <div className={'Wrapper'+structureInfo} key={'Wrapper'+structureInfo}>
          <ButtonGoBack handleLocation={handleLocation} idName={'goback'+structureInfo} indicator={structureInfo}/>
-         {dataStru && dataStru.map((item, i) => {
+         <div key={'Items'+structureInfo} className={'items'+structureInfo} >
+         <div className={'itemName'+structureInfo}>
+            <p key={params.id+structureInfo+'name'}>Сооружение {params.id}</p>
+         </div>
+         {dataStru ? dataStru.map((item, i) => {
             if (params.id === item.name) {
                return (
+                  <>
                   <StructureStupid key={'stupid'+structureInfo+i}>
                      {item}
                   </StructureStupid>
+                  </>
                )
-            } 
-         })}
+            }
+         }) : <p>Нет дата</p>}
+         </div>   
       </div>
    )
 }

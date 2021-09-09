@@ -35,13 +35,13 @@ const Posts = () => {
               <Route exact path='/' component={Home} />
 
               <Route exact path='/civilizations' component={Civil} />
-              <Route path='/civilizations/:id/' component={CivInfo } />
+              <Route path='/civilizations/:id/' component={CivInfo} />
   
               <Route exact path='/units' component={Units} />
               <Route path='/units/:id' component={UnitSkill} />
 
               <Route exact path='/structures' component={Structure} />
-              <Route path='/structures/:id' component={StructureInfo} /> 
+              <Route exact path='/structures/:id' component={StructureInfo} /> 
 
               <Route exact path='/technologies' component={Technologies} />
               <Route path='/technologies/:id/' component={TechInfo} />

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, useHistory, useParams} from 'react-router-dom'
 import { ACTION_GET_CIVIL_Requested, ACTION_GET_CIVIL_REQUESTED_DETAIL , ACTION_GET_ROUTE_CIVIL_MENU, ACTION_GET_CIVIL_DETAIL_FAILED } from '../../ducks/civil/actions';
@@ -24,7 +24,7 @@ const CivInfo = (props) => {
       } else return null
    }
    useEffect(() => {
-   getFetch(baseUrl, civilizations, data)
+      getFetch(baseUrl, civilizations, data)
    }, []);
 
    const handleclick = (e) => {
@@ -55,12 +55,14 @@ const CivInfo = (props) => {
       history.push('/civilizations');
    }
 
+   /*дата в params берется из link=to элемента */
+
    return ( 
    <>
       {data && data.map((item, i) => {
          if (params.id === (item.name+item.id)) {
             return (
-               <div key={'Wrapper'+civInfo}>
+               <div key={'Wrapper'+civInfo} id={'Wrapper'+civInfo}>
                   <ButtonGoBack handleLocation={handleLocation} idName={'goback'+civInfo} indicator={civInfo}/>
                   <div key={'Items'+civInfo+i} className={'items'+civInfo}>
                      <CivilInfoStupid key={'stupid'+civInfo+i}> 

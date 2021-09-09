@@ -1,6 +1,6 @@
 
 import {Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -57,7 +57,6 @@ export const ListAge = (props) => {
    const ValueFromInput = (e) => {
       e.preventDefault()
       const inputs = e.target.value
-
       const filtredFunc = (arr) => {
          const filtredArr = arr.filter(item => (item.name.toLowerCase().includes(inputs) || item.name.includes(inputs)));
          setFilter(filtredArr)
@@ -66,14 +65,15 @@ export const ListAge = (props) => {
    }
 
    const ClearInput = (e) => {
-      e.target.value = ''
-      setFilter('')
+      setTimeout(() => {
+         setFilter('')
+      }, 100);
    }
 
    return (
       <>
       { data ? <div className='filter'>
-         <input className='filter input' name='serach' type='text' placeholder='Что найти, Правитель?' onChange={ValueFromInput} onBlur={ClearInput}/>
+         <input className='filter input' name='serach' type='text' placeholder='Что найти, Правитель?' onChange={ValueFromInput} onBlur={ClearInput} onFocus={ValueFromInput}/>
       </div> : null
       }
 
@@ -147,6 +147,7 @@ export const ButtonGoBack = (props) => {
 export const ButtonClose = (props) => {
    const { handleLocation, idName,  indicator, selector } = props
    const e  = useSelector(selector)
+
    return (
    <>
       {
@@ -154,11 +155,12 @@ export const ButtonClose = (props) => {
          <ul id={idName} key={idName+indicator} >
             <button key={'buttonX'+indicator} onClick={handleLocation}>X</button>
             <li>{e}</li>
-         </ul> : 
+         </ul> :
+
       e === null ?
          <>
-            <button key={'buttonX'+indicator} onClick={handleLocation}>X</button>
-         </> : null
+            <button id='CloseButton' key={'buttonX'+indicator} onClick={handleLocation}>X</button>
+         </>  : null
       }
    </>   
    )  
@@ -179,7 +181,7 @@ export const SortStructure = (data) => {
       // data.forEach((element,i) => {
       //    console.log(element)
       // });
-    
+   
       const setArr = [...new Set(data.map((item, i) => item.name))];
       const sortArr = (a,b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1;
       return setArr.sort(sortArr)

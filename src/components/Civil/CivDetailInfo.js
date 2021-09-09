@@ -14,12 +14,13 @@ const CivDetailInfo = (props) => {
    const path = useSelector(Civilpath)
    const  dispatches = useDispatch()
    const { civDetailinfo } = indicator
-   
+   const urlCiv = props.match.url
+   console.log(`urlCiv`, urlCiv)
+
    const handleLocation = () => {
       history.go(-1);
-      dispatches(ACTION_GET_CIVIL_DETAIL_Succeed({}))
+      dispatches(ACTION_GET_CIVIL_DETAIL_Succeed([]))
       dispatches(ACTION_GET_CIVIL_DETAIL_FAILED(null))
-
    }
    // Сделать дата мап б проверить есть ли поля с unique_unit и unique_tech
 
@@ -35,7 +36,7 @@ const CivDetailInfo = (props) => {
                   {$}{handleLocation}
                </CivilTechDetailStupid>
             : (!$.id && !fetchStatus) ?
-               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={civDetailinfo} selector={Civilerror}/>
+               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={civDetailinfo} selector={Civilerror} detailData={CivildataDetail}/>
             : null
          }
       </>

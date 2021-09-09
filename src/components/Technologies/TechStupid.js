@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { indicator } from '../SmallElems/SmallElems'
 const { technology, techInfo, techDetailInfo, techStupid } = indicator
+import { useDispatch } from 'react-redux';
+import { ACTION_GET_ROUTE_TECH_MENU } from '../../ducks/technologies/actions'
 
 
 const TechInfoStupid = (props) => {
-   const { children: [item, urlCiv, handleclick, technologies] } = props
+   const { children: [item, urlCiv, handleclick, technologies] } = props  
+   const dispatches = useDispatch()
+   
+   useEffect(() => {
+      dispatches(ACTION_GET_ROUTE_TECH_MENU(item.develops_in))
+   }, [item.develops_in])
+
    return (
       <>
          <p>Имя юнита {item.name}</p>
@@ -16,7 +24,7 @@ const TechInfoStupid = (props) => {
          <p>Стоимость Юнита: {item.cost.Wood} древесины, {item.cost.Gold} золота</p>
          {item.develops_in.length > 2 ? 
             <div key={'TechItem'+techStupid} className={technologies+'Item'}>
-               <Link to={`${urlCiv}/tech`} id={item.id} onClick={handleclick} data-path={item.develops_in}>Мануфакторум Юнита {item.name}</Link> 
+               <Link to={`${urlCiv}/tech`} id={item.id} onClick={handleclick} >Мануфакторум Юнита {item.name}</Link> 
             </div> : <p>Нет уникального юнита</p> 
          }  
       </>

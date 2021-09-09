@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { indicator, ButtonClose} from '../SmallElems/SmallElems'
 const { units, unitSkil, unitDetailInfo, unitsStupid } = indicator
-import { Unitserror } from '../../ducks/units/selectors'
+import { Unitserror, UnitsdataUnitDetail } from '../../ducks/units/selectors'
 
 
 export const UnitsStupid = (props) => {
@@ -53,7 +53,7 @@ export const  UnitDetailStupid = (props) => {
          dataUnitDetail ?
             <>
                <ul key={'Skils'+unitDetailInfo} id='Skils'>
-                  <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} />
+                  <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} detailData={UnitsdataUnitDetail}/>
                   <li>Имя: {dataUnitDetail.name}</li>
                   <li>Фракция: {dataUnitDetail.age}</li>
                   <li>Время постройки: {dataUnitDetail.build_time}</li>

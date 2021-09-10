@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { indicator, ButtonClose } from '../SmallElems/SmallElems'
-const { civil, civInfo, civDetailinfo, civilStupid } = indicator
-import { Civilerror, CivildataDetail } from '../../ducks/civil/selectors'
+const { civilStupid } = indicator
+import { Civilerror, Civilpath } from '../../ducks/civil/selectors'
+import { useDispatch, useSelector } from 'react-redux'
+import { ACTION_GET_CIVIL_DETAIL_UNIT, ACTION_GET_CIVIL_DETAIL_TECH } from '../../ducks/civil/actions'
 
 
 export const CivilInfoStupid = (props) => {
    const { children: [item, urlCiv, handleclick, civilizations] } = props
+   const dispatches = useDispatch()
+
+   useEffect(() => {
+      dispatches(ACTION_GET_CIVIL_DETAIL_UNIT(item.unique_unit))
+      dispatches(ACTION_GET_CIVIL_DETAIL_TECH(item.unique_tech))
+   }, [item])
+
 
    return (
       <>
@@ -18,7 +27,7 @@ export const CivilInfoStupid = (props) => {
          {(item.unique_unit && item.unique_unit[0]) ? item.unique_unit.map((linkUnit,i) => {
          return (
             <div key={'CivilsItem'+civilStupid+i} className={civilizations+'Item'}>
-               <Link to={`${urlCiv}/unique_unit`} id='unique_unit' onClick={handleclick} data-path={linkUnit}>{i+1}. Уникальный юнит {item.name}</Link>
+               <Link to={`${urlCiv}/unique_unit`} id='unique_unit' data-path={i} onClick={handleclick}>{i+1}. Уникальный юнит {item.name}</Link>
             </div>
             )
             }) : 
@@ -30,7 +39,7 @@ export const CivilInfoStupid = (props) => {
          { (item.unique_tech && item.unique_tech[0]) ? item.unique_tech.map((linkTech,i) => {
                return (
                <div key={'CivilsItem2'+civilStupid+i} className={civilizations+'Item2'}>
-                  <Link to={`${urlCiv}/unique_tech`} id='unique_tech' onClick={handleclick} data-path={linkTech}>{i+1}. Уникальная технология {item.name}</Link>
+                  <Link to={`${urlCiv}/unique_tech`} id='unique_tech' onClick={handleclick} data-path={i}>{i+1}. Уникальная технология {item.name}</Link>
                </div>
                )
             }) :  
@@ -65,7 +74,8 @@ export const CivilUnitDetailStupid = (props) => {
                   )
                })
             }
-         </ul> : null }
+         </ul>
+         : null }
       </ul>
    </>
    )

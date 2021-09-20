@@ -16,21 +16,20 @@ const TechInfoStupid = (props) => {
 
    return (
       <>
-         <p>Имя юнита {item.name}</p>
+         <p>Имя юнита: {item.name}</p>
          <p>Время постоки: {item.build_time}</p>
          <p>Тип: {item.age}</p>
          <p>Отличительная особенность: {item.description}</p>
          <p>Распостранение: {item.expansion}</p>
          <p>Стоимость Юнита: {item.cost.Wood} древесины, {item.cost.Gold} золота</p>
          {item.develops_in.length > 2 ? 
-            <div key={'TechItem'+techStupid} className={technologies+'Item'}>
+            <div key={'TechItem'+techStupid} className={technologies+'ItemDetail'}>
                <Link to={`${urlCiv}/tech`} id={item.id} onClick={handleclick} >Мануфакторум Юнита {item.name}</Link> 
             </div> : <p>Нет уникального юнита</p> 
          }  
       </>
    )
 };
-
 
 export const  TechDetailStupid = (props) => {
    const  { item, dataDetail, handleLocation } = props
@@ -54,7 +53,7 @@ export const  TechDetailStupid = (props) => {
             </> : 
          dataDetail ?
             <>
-               <ul key={'Skils'+techDetailInfo} id='Skils'>
+               <ul key={'skils'+techDetailInfo} id={'skils'+techDetailInfo}>
                   <button key={'buttonX'+techInfo} onClick={handleLocation}>X</button>
                   <li>Имя: {dataDetail.name}</li>
                   <li>Фракция: {dataDetail.age}</li>

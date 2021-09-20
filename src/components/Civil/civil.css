@@ -1,16 +1,15 @@
-/*I dont use position: relative on thid block*/
-.Wrapper_structureInfo {
+.Wrapper_civInfo {
    margin-top: 20px;
    display: flex;
    flex-direction: column;
-   position: relative;
+   /* position: relative;  hide relative*/
 }
 
-._structureInfo {
-   background-color: rgba(48, 125, 48, 0.7);
+._civInfo {
+   background-color: rgba(220, 20, 60, 0.7);
 }
 
-.itemName_structureInfo {
+.itemName_civInfo  {
    position: sticky;
    border-radius: 5px;
    top: 60px;
@@ -22,7 +21,7 @@
    animation: show 1.5s ;
 }   
 
-.itemName_structureInfo > p {
+.itemName_civInfo  > p { 
    font-size: 1em;
    display: inline-block;
    background-color: rgba(255, 255, 255, 0.65);
@@ -32,7 +31,7 @@
    border-radius: 5px;
 }   
 
-.items_structureInfo {
+.items_civInfo  {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
@@ -41,10 +40,10 @@
    border: 1px solid rgba(255, 255, 255, 0.3);
    border-radius: 5px;
    margin-bottom: 10px;
-   background-color: rgba(48, 125, 48, 0.4);
+   background-color: rgba(220, 20, 60, 0.7);;
 }
 
-.item_structureInfo{
+.item_civInfo  {
    display: grid;
    grid-template-columns: 1fr;
    grid-gap: 5px;
@@ -59,20 +58,47 @@
    width: auto;
    background-color: rgba(0, 0, 0, 0.20);
 }
+@keyframes show {
+   from {opacity: 0;} to {opacity: 1;}
+}
 
-.item_structureInfo > p { 
+.item_civInfo  > p { 
    display: inline-block;
    color: rgb(255, 255, 255);
    font-size: 2em;
 }
 
-#goback_structureInfo:hover {
+#goback_civInfo:hover {
    border: 1px solid rgba(255, 255, 255, 1);
-   background-color: rgba(48, 125, 48, 0.8);
+   background-color: rgba(220, 20, 60, 0.95);;
    transform: translate(5px, 0px) scale(1.1);
    transition-duration: .5s;
 }
 
-.structuresItem {
-   background-color: rgba(0, 100, 0, 0.700);
+.technologiesItem {
+   background-color: rgba(255, 242, 0, 0.5);
+}
+
+#skils_techDetailInfo {
+   text-align: center;
+   color:rgb(255, 255, 255);
+   margin: 0;
+   font-size: 2em;
+   background-color: rgba(0, 0, 0, 0.85);
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   right:0;
+   -webkit-animation-duration: 0.5s;
+   animation-duration: 0.5s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+   -webkit-animation-name: fadeIn;
+   animation-name: fadeIn;
+   z-index: 3;
+}
+
+.civilizationsItemDetail {
+   background-color: rgba(220, 20, 60, 0.95);;
 }

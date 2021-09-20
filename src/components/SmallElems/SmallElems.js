@@ -1,6 +1,6 @@
 
 import {Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -50,7 +50,7 @@ const  HomePage = () => {
    )
 }
 
-export const ListAge = (props) => {
+const ListAgeMemo = (props) => {
    const { data, blockName, elem, propsUrl, SortStructure, Sort } = props
    const [filterData, setFilter] = useState('')
 
@@ -64,7 +64,7 @@ export const ListAge = (props) => {
       filtredFunc(data)
    }
 
-   const ClearInput = (e) => {
+   const ClearInput = () => {
       setTimeout(() => {
          setFilter('')
       }, 100);
@@ -135,12 +135,15 @@ export const ListAge = (props) => {
       </>
    )
 }
+export const ListAge = React.memo(ListAgeMemo)
 
 /****** ACTION FOR BUTTONS ******** */
 export const ButtonGoBack = (props) => {
    const { handleLocation, idName,  indicator } = props
    return (
-      <div key={idName+indicator+'a'} id={idName} onClick={handleLocation}>Вернуться назад</div>
+      <div key={idName+indicator+'a'}
+         className={`goback ${idName}`} 
+         onClick={handleLocation}>Вернуться назад</div>
    )
 }
 

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { errorMes } from '../../components/Api/Api'
 // export { initialStruState } from './reducer'
 
 export const initialStruState = {
@@ -28,7 +29,7 @@ export const structures = createSlice(
          },
          GET_STRU_FAILED: (state, action) => {
             state,
-            state.error = action.error,
+            state.error = errorMes,
             state.isFetching = false,
             state.url = ''
          }

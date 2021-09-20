@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory }  from 'react-router-dom'
 import { CivildataDetail, CivilisFetching, Civilpath, Civilerror } from '../../ducks/civil/selectors'
@@ -15,10 +15,9 @@ const CivDetailInfo = (props) => {
    const  dispatches = useDispatch()
    const { civDetailinfo } = indicator
    const urlCiv = props.match.url
-   console.log(`urlCiv`, urlCiv)
 
    const handleLocation = () => {
-      history.go(-1);
+      history.push('/civilizations');
       dispatches(ACTION_GET_CIVIL_DETAIL_Succeed([]))
       dispatches(ACTION_GET_CIVIL_DETAIL_FAILED(null))
    }
@@ -36,7 +35,10 @@ const CivDetailInfo = (props) => {
                   {$}{handleLocation}
                </CivilTechDetailStupid>
             : (!$.id && !fetchStatus) ?
-               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={civDetailinfo} selector={Civilerror} detailData={CivildataDetail}/>
+               <ButtonClose 
+                  handleLocation={handleLocation}
+                  idName={'Skils'} indicator={civDetailinfo}
+                  selector={Civilerror} detailData={CivildataDetail}/>
             : null
          }
       </>

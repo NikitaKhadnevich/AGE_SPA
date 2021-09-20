@@ -25,7 +25,12 @@ const Technologies = (props) => {
 
   return (
     <>  
-      <ListAge data={data} blockName={technology} elem={technologies} propsUrl={propsUrl} Sort={Sort}/>
+      <ListAge
+        data={data}
+        blockName={technology}
+        elem={technologies}
+        propsUrl={propsUrl}
+        Sort={Sort}/>
     </>
   )
 };

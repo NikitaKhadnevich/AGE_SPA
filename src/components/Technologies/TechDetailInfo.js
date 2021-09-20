@@ -25,8 +25,11 @@ const TechDetailInfo = (props) => {
          {(dataDetail[0] && !fetchStatus) ? 
             <>
                <div className='skilsWrap'>
-               <ButtonClose handleLocation={handleLocation} idName={'SkilsBut'} indicator={techDetailInfo} 
-               selector={TechError}/>
+                  <ButtonClose
+                     handleLocation={handleLocation}
+                     idName={'SkilsBut'}
+                     indicator={techDetailInfo} 
+                     selector={TechError}/>
                   {dataDetail.map((item,i) => {
                      return (          
                         <ul key={'Skils'+techDetailInfo+i} id={`Skils${i}`}>
@@ -37,9 +40,15 @@ const TechDetailInfo = (props) => {
                </div>
             </> 
             : (dataDetail.id && !fetchStatus) ?
-               <TechDetailStupid dataDetail={dataDetail} handleLocation={handleLocation} />
+               <TechDetailStupid 
+                  dataDetail={dataDetail}
+                  handleLocation={handleLocation} />
             : (!fetchStatus) ?
-               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={techDetailInfo} selector={TechError}/>       
+               <ButtonClose
+                  handleLocation={handleLocation}
+                  idName={'Skils'}
+                  indicator={techDetailInfo}
+                  selector={TechError}/>       
          : null }
       </>
    )

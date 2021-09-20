@@ -26,7 +26,7 @@ export const CivilInfoStupid = (props) => {
 
          {(item.unique_unit && item.unique_unit[0]) ? item.unique_unit.map((linkUnit,i) => {
          return (
-            <div key={'CivilsItem'+civilStupid+i} className={civilizations+'Item'}>
+            <div key={'CivilsItem'+civilStupid+i} className={civilizations+'ItemDetail'}>
                <Link to={`${urlCiv}/unique_unit`} id='unique_unit' data-path={i} onClick={handleclick}>{i+1}. Уникальный юнит {item.name}</Link>
             </div>
             )
@@ -38,7 +38,7 @@ export const CivilInfoStupid = (props) => {
 
          { (item.unique_tech && item.unique_tech[0]) ? item.unique_tech.map((linkTech,i) => {
                return (
-               <div key={'CivilsItem2'+civilStupid+i} className={civilizations+'Item2'}>
+               <div key={'CivilsItem2'+civilStupid+i} className={civilizations+'ItemDetail'}>
                   <Link to={`${urlCiv}/unique_tech`} id='unique_tech' onClick={handleclick} data-path={i}>{i+1}. Уникальная технология {item.name}</Link>
                </div>
                )
@@ -57,7 +57,12 @@ export const CivilUnitDetailStupid = (props) => {
    return (
       <>
       <ul key={'Skils'+civDetailinfo} id='Skils'>
-         <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={civDetailinfo} selector={Civilerror} />
+         <ButtonClose
+            handleLocation={handleLocation}
+            idName={'Skils'}
+            indicator={civDetailinfo}
+            selector={Civilerror} /> 
+
          <li>Имя: {$.name}</li>
          <li >Фракция: {$.age}</li>
          <li >Броня: {$.armor}</li>
@@ -82,12 +87,18 @@ export const CivilUnitDetailStupid = (props) => {
 }
 
 export const CivilTechDetailStupid = (props) => {
-   const { children: [$, handleLocation] } = props
+   const { children: [$, handleLocation, alert] } = props
    const { civDetailinfo } = indicator
+
    return (
       <>
          <ul key={'Skils'+civDetailinfo} id='Skils'>
-            <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={civDetailinfo} selector={Civilerror} />
+            <ButtonClose
+               handleLocation={handleLocation}
+               idName={'Skils'}
+               indicator={civDetailinfo}
+               selector={Civilerror} />
+
             <li>Имя: {$.name}</li>
             <li>Фракция: {$.age}</li>
             <li>Описание: {$.description}</li>

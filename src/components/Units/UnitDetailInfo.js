@@ -24,12 +24,20 @@ const UnitDetailInfo = (props) => {
       <>
          {(dataUnitDetail[0] && !fetchStatus)  ? 
          <>  
-            <div key={'skilsWrap'+unitDetailInfo} className='skilsWrap'>
-               <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} detailData={UnitsdataUnitDetail}/>
+            <div key={'skils'+unitDetailInfo} id={'skils'+unitDetailInfo}>
+               <ButtonClose 
+                  handleLocation={handleLocation}
+                  idName={'Skils'}
+                  indicator={unitDetailInfo}
+                  selector={Unitserror}
+                  detailData={UnitsdataUnitDetail}/>
+
                   {dataUnitDetail.map((item, i) => {
                      return (
                         <ul key={'Skils'+unitDetailInfo+i} id={`Skils${i}`}>
-                           <UnitDetailStupid item={item} handleLocation={handleLocation} />   
+                           <UnitDetailStupid
+                              item={item}
+                              handleLocation={handleLocation} />   
                         </ul> 
                         )
                      })
@@ -37,9 +45,15 @@ const UnitDetailInfo = (props) => {
             </div>
          </>
          : (dataUnitDetail.id && !fetchStatus) ?
-            <UnitDetailStupid dataUnitDetail={dataUnitDetail} handleLocation={handleLocation}/>
+            <UnitDetailStupid
+               dataUnitDetail={dataUnitDetail}
+               handleLocation={handleLocation}/>
          : (!fetchStatus) ?
-            <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} detailData={UnitsdataUnitDetail}/>
+            <ButtonClose
+               handleLocation={handleLocation}
+               idName={'Skils'}
+               indicator={unitDetailInfo}
+               selector={Unitserror} detailData={UnitsdataUnitDetail}/>
          : null}
       </>
    )

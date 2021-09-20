@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { indicator, ButtonClose} from '../SmallElems/SmallElems'
 const { units, unitSkil, unitDetailInfo, unitsStupid } = indicator
 import { Unitserror, UnitsdataUnitDetail } from '../../ducks/units/selectors'
+import { useDispatch } from 'react-redux';
+import { ACTION_GET_ROUTE_UNIT_MENU } from '../../ducks/units/actions'
 
 
 export const UnitsStupid = (props) => {
    const { children: [item, urlCiv, handleclick,  units] } = props
+   const dispatches = useDispatch()
+
+   useEffect(() => {
+      dispatches(ACTION_GET_ROUTE_UNIT_MENU(item.created_in))
+   }, [item.created_in])
 
    return (
       <>
@@ -25,8 +32,8 @@ export const UnitsStupid = (props) => {
       { item.cost.Gold ? <p key={item.cost.Gold+unitSkil+'Gold'}>Стоимость в золоте: {item.cost.Gold} монет</p> : null }
       { item.cost.info ? <p key={item.cost.Gold+unitSkil}>Стоимость: {item.cost.info} </p> : null }
       { item.created_in.includes('https' || 'http') ?  
-         <div key={item.name+unitSkil+'building'} className={units+'Item'}> 
-            <Link to={`${urlCiv}/building`} id={item.id} onClick={handleclick} data-path={item.created_in}>Мануфакторум Юнита {item.name}</Link> 
+         <div key={item.name+unitSkil+'building'} className={units+'ItemDetail'}> 
+            <Link to={`${urlCiv}/building`} id={item.id} onClick={handleclick}>Мануфакторум Юнита {item.name}</Link> 
          </div> : 
       <div key={'UnitsItemNoTech'+unitsStupid} className={units+'NoItem'}>
          <p>У цивилизации нет уникальных юнитов</p>

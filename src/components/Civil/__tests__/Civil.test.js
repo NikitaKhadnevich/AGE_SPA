@@ -60,14 +60,21 @@ describe('<Civil /> ', () => {
             mockFnDispatch(ACTION_GET(`${url}${path}`))
          } else null
       }
-      mockFnEffect(getFetch( 'www.tut.by', '/avto', civil))
+      mockFnEffect(getFetch( 'www.dev.by', '/avto', civil))
 
       // console.log(`civil -- `, store.getState().data)
       // console.log(`props -- `, props.match.url)
+      
+  
 
       const wrapper = mount(
          // <Provider store={store}>
-            <Civil data={civil} getFetch={getFetch} useEffect={mockFnEffect} {...props} Sort={Sort} />
+            <Civil
+               data={civil}
+               getFetch={getFetch}
+               useEffect={mockFnEffect}
+               {...props}
+               Sort={Sort} />
          // {/* </Provider> */}
       );
       expect(wrapper).toMatchSnapshot();

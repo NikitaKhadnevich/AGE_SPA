@@ -24,7 +24,12 @@ const Units = (props) => {
 
   return (
     <>  
-      <ListAge data={dataUnit} blockName={indicator.units} elem={units} propsUrl={propsUrl} Sort={Sort}/>
+      <ListAge
+        data={dataUnit}
+        blockName={indicator.units}
+        elem={units}
+        propsUrl={propsUrl}
+        Sort={Sort}/>
     </>
   )
 };

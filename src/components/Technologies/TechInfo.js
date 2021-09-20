@@ -44,18 +44,23 @@ const TechInfo = (props) => {
          { data && data.map((item,i) => {
             if (params.id === item.name+item.id) {
                return (
-                  <div key={'Wrapper'+techInfo} >
-                     <ButtonGoBack key={'button'+techInfo} 
-                     handleLocation={handleLocation} 
-                     idName={'goback'+techInfo} 
-                     indicator={techInfo}/>
+                  <div key={'Wrapper'+techInfo} className={'Wrapper'+techInfo}>
+                     <ButtonGoBack 
+                        key={'button'+techInfo} 
+                        handleLocation={handleLocation} 
+                        idName={techInfo} 
+                        indicator={techInfo}/>
 
-                     <div key={'Items'+techInfo} className={'items'+techInfo}>
-                        <TechInfoStupid key={'stupid'+techInfo+i}> 
-                           {item}{urlCiv}{handleclick}{technologies}
-                        </TechInfoStupid>
-                     </div>
-
+                     <div key={'Items'+techInfo} className={'items'+techInfo} >   
+                        <div key={'ItemName'+techInfo} className={'itemName'+techInfo}>
+                           <p key={params.id+techInfo+'name'}>Технология {item.name}</p>
+                        </div>
+                        <div key={'Items'+techInfo} className={'item'+techInfo}>
+                           <TechInfoStupid key={'stupid'+techInfo+i}> 
+                              {item}{urlCiv}{handleclick}{technologies}
+                           </TechInfoStupid>
+                        </div>
+                     </div> 
                      <Switch>
                         <Route path={`${urlCiv}/:id`} component={TechDetailInfo} />
                      </Switch>

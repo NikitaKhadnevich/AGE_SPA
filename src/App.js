@@ -16,8 +16,6 @@ import StructureInfo from './components/Structure/StructureInfo';
 import Technologies from './components/Technologies/Technologies'
 import TechInfo from './components/Technologies/TechInfo'
 
-import Footer from './components/Footer/Footer'
-
 
 const Posts = () => {
   return (

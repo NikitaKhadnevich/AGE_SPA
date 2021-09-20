@@ -33,7 +33,7 @@ exports[`<Civil />  should are working Methods in Civil 1`] = `
     }
   }
 >
-  <ListAge
+  <Memo(ListAgeMemo)
     Sort={[Function]}
     blockName="_civil"
     elem="civilizations"
@@ -43,6 +43,6 @@ exports[`<Civil />  should are working Methods in Civil 1`] = `
       className="civilizationsWrapper"
       key="civilizationsWrapper"
     />
-  </ListAge>
+  </Memo(ListAgeMemo)>
 </Civil>
 `;

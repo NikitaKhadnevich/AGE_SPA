@@ -13,7 +13,6 @@ const Civil = (props) => {
   const dispatches = useDispatch();
   const { civil } = indicator;
   const propsUrl = props.match.url
-  const params = useParams()
 
   const getFetch = (url, path, arr) => {
     if (!arr) {
@@ -27,7 +26,12 @@ const Civil = (props) => {
 
   return (
     <>
-      <ListAge data={data} blockName={civil} elem={civilizations} propsUrl={propsUrl} Sort={Sort} />
+      <ListAge
+        data={data}
+        blockName={civil}
+        elem={civilizations}
+        propsUrl={propsUrl}
+        Sort={Sort} />
     </>
   )
 };

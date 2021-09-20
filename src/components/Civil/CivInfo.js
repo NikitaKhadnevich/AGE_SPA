@@ -57,7 +57,6 @@ const CivInfo = (props) => {
    // вставлю линку даты и создам новый стор для юниов 
    // путем распаршивания ее через джоин(например)
    // а уже потом у меня будет линковаться все как нужно
-
    const handleLocation = () => {
       history.push('/civilizations');
    }
@@ -65,29 +64,36 @@ const CivInfo = (props) => {
    /*дата в params берется из link=to элемента */
 
    return ( 
-   <>
       <Router>
       {data && data.map((item, i) => {
          if (params.id === (item.name+item.id)) {
             return (
-               <div key={'Wrapper'+civInfo} id={'Wrapper'+civInfo}>
-                  <ButtonGoBack handleLocation={handleLocation} idName={'goback'+civInfo} indicator={civInfo}/>
+               <>
+               <div key={'Wrapper'+civInfo} className={'Wrapper'+civInfo}>
+                  <ButtonGoBack 
+                     handleLocation={handleLocation}
+                     idName={civInfo}
+                     indicator={civInfo}/>
 
-                  <div key={'Items'+civInfo+i} className={'items'+civInfo}>
-                     <CivilInfoStupid key={'stupid'+civInfo+i}> 
-                        {item}{urlCiv}{handleclick}{civilizations}
-                     </CivilInfoStupid>
+                  <div key={'Items'+civInfo} className={'items'+civInfo} >
+                     <div key={'ItemName'+civInfo} className={'itemName'+civInfo}>
+                        <p key={params.id+civInfo+'name'}>Сооружение {item.name}</p>
+                     </div>
+                     <div key={'Items'+civInfo+i} className={'item'+civInfo}>
+                        <CivilInfoStupid key={'stupid'+civInfo+i}> 
+                           {item}{urlCiv}{handleclick}{civilizations}
+                        </CivilInfoStupid>
+                     </div>
                   </div>
-                  
                   <Switch>
                      <Route path={`${urlCiv}/:id`} component={CivDetailInfo} />
                   </Switch>
                </div>
+               </>
             )
          } 
       })}
       </Router>
-   </>
    )
 }
 

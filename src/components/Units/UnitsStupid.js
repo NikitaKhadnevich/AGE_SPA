@@ -35,7 +35,7 @@ export const UnitsStupid = (props) => {
          <div key={item.name+unitSkil+'building'} className={units+'ItemDetail'}> 
             <Link to={`${urlCiv}/building`} id={item.id} onClick={handleclick}>Мануфакторум Юнита {item.name}</Link> 
          </div> : 
-      <div key={'UnitsItemNoTech'+unitsStupid} className={units+'NoItem'}>
+      <div key={'UnitsItemNoTech'+unitsStupid} className={`noItem for${units}`}>
          <p>У цивилизации нет уникальных юнитов</p>
       </div>
       }
@@ -60,7 +60,12 @@ export const  UnitDetailStupid = (props) => {
          dataUnitDetail ?
             <>
                <ul key={'Skils'+unitDetailInfo} id='Skils'>
-                  <ButtonClose handleLocation={handleLocation} idName={'Skils'} indicator={unitDetailInfo} selector={Unitserror} detailData={UnitsdataUnitDetail}/>
+                  <ButtonClose
+                     handleLocation={handleLocation}
+                     idName={'SkilsBut'}
+                     indicator={unitDetailInfo}
+                     selector={Unitserror}
+                     detailData={UnitsdataUnitDetail}/>
                   <li>Имя: {dataUnitDetail.name}</li>
                   <li>Фракция: {dataUnitDetail.age}</li>
                   <li>Время постройки: {dataUnitDetail.build_time}</li>

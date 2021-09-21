@@ -42,7 +42,7 @@ const StructureInfo = (props) => {
    return (
       <>
       {dataStru.length > 0 && !error && !isFetch ? 
-      <div className={'Wrapper'+structureInfo} key={'Wrapppper'+structureInfo}>
+      <div className={`detailWrapper detailFor${structureInfo}`} key={'Wrapper'+structureInfo}>
          <ButtonGoBack
             key={'Goback'+structureInfo}
             handleLocation={handleLocation}
@@ -50,7 +50,7 @@ const StructureInfo = (props) => {
             indicator={structureInfo}/>
 
          <div key={'Items'+structureInfo} className={'items'+structureInfo} >
-            <div key={'ItemName'+structureInfo} className={'itemName'+structureInfo}>
+            <div key={'ItemName'+structureInfo} className={`elementName`}>
                <p key={params.id+structureInfo+'name'}>Сооружение {params.id}</p>
             </div>
          {dataStru ? dataStru.map((item, i) => {

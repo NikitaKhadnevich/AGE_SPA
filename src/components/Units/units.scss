@@ -1,36 +1,12 @@
-
-.Wrapper_unitSkil {
-   margin-top: 20px;
-   display: flex;
-   flex-direction: column;
-   /* position: relative;  hide relative*/
-}
+$unit-main: rgba(0, 154, 185, 0.7);
+$unit-border: rgba(255, 255, 255, 0.3);
+$unit-shadowBlock: rgba(0, 0, 0, 0.20);
+$UnitBackground-Hover: rgba(20, 170, 200, 0.9);
+$UnitBorder-Hover: rgba(255, 255, 255, 1);
 
 ._unitSkil {
-   background-color: rgba(0, 154, 185, 0.7);
+   background-color: $unit-main;
 }
-
-.itemName_unitSkil {
-   position: sticky;
-   border-radius: 5px;
-   top: 60px;
-   display: flex;
-   width: 100%;
-   height: fit-content;
-   justify-content: flex-start;
-   color: rgb(0, 0, 0);
-   animation: show 1.5s ;
-}   
-
-.itemName_unitSkil > p { 
-   font-size: 1em;
-   display: inline-block;
-   background-color: rgba(255, 255, 255, 0.7);
-   width: fit-content;
-   height: fit-content;
-   padding: 5px;
-   border-radius: 5px;
-}   
 
 .items_unitSkil {
    display: flex;
@@ -38,10 +14,10 @@
    flex-wrap: wrap;
    margin: 0 auto;
    width: 100%;
-   border: 1px solid rgba(255, 255, 255, 0.3);
+   border: 1px solid $unit-border;
    border-radius: 5px;
    margin-bottom: 10px;
-   background-color: rgba(0, 154, 185, 0.7);
+   background-color: $unit-main;
 }
 
 .item_unitSkil{
@@ -57,7 +33,7 @@
    min-width: 200px;
    max-width: fit-content;
    width: auto;
-   background-color: rgba(0, 0, 0, 0.20);
+   background-color: $unit-shadowBlock;
 }
 
 .item_unitSkil > p { 
@@ -66,16 +42,26 @@
    font-size: 2em;
 }
 
-#goback_unitSkil:hover {
-   border: 1px solid rgba(255, 255, 255, 1);
-   background-color: rgba(0, 154, 185, 0.700);
+._unitSkil:hover {
+   border: 1px solid $UnitBorder-Hover;
+   background-color: $UnitBackground-Hover;
    transform: translate(5px, 0px) scale(1.1);
    transition-duration: .5s;
 }
 
 .unitsItem {
-   background-color: rgba(0, 154, 185, 0.700)
+   background-color: $unit-main;
 }
+
+.unitsItemDetail {
+   background-color: $unit-main;
+}
+
+.unitsItemDetail:hover {
+   background-color: $UnitBackground-Hover;
+   transition-duration: .5s;
+}
+
 
 #skils_unitDetailInfo {
    text-align: center;
@@ -96,9 +82,4 @@
    animation-name: fadeIn;
    z-index: 3;
 }
-
-.unitsItemDetail {
-   background-color: rgba(0, 154, 185, 0.7);
-}
-
 

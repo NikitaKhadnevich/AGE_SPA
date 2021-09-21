@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import { indicator } from '../SmallElems/SmallElems'
+import { indicator, ButtonClose } from '../SmallElems/SmallElems'
 const { technology, techInfo, techDetailInfo, techStupid } = indicator
+import { TechError, TechDataDetail } from '../../ducks/technologies/selectors'
 import { useDispatch } from 'react-redux';
 import { ACTION_GET_ROUTE_TECH_MENU } from '../../ducks/technologies/actions'
 
@@ -25,7 +26,10 @@ const TechInfoStupid = (props) => {
          {item.develops_in.length > 2 ? 
             <div key={'TechItem'+techStupid} className={technologies+'ItemDetail'}>
                <Link to={`${urlCiv}/tech`} id={item.id} onClick={handleclick} >Мануфакторум Юнита {item.name}</Link> 
-            </div> : <p>Нет уникального юнита</p> 
+            </div> : 
+               <div key={'TechItemNoTech'+techStupid} className={technologies+'NoItem'}>
+                  <p>У цивилизации нет уникальных технологий</p>
+               </div>
          }  
       </>
    )
@@ -54,7 +58,12 @@ export const  TechDetailStupid = (props) => {
          dataDetail ?
             <>
                <ul key={'skils'+techDetailInfo} id={'skils'+techDetailInfo}>
-                  <button key={'buttonX'+techInfo} onClick={handleLocation}>X</button>
+                  <ButtonClose
+                     handleLocation={handleLocation}
+                     idName={'SkilsBut'}
+                     indicator={techDetailInfo}
+                     selector={TechError}
+                     detailData={TechDataDetail}/>
                   <li>Имя: {dataDetail.name}</li>
                   <li>Фракция: {dataDetail.age}</li>
                   <li>Время постройки: {dataDetail.build_time}</li>

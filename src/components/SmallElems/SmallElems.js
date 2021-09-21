@@ -162,7 +162,7 @@ export const ButtonClose = (props) => {
 
       e === null ?
          <>
-            <button id='CloseButton' key={'buttonX'+indicator} onClick={handleLocation}>X</button>
+            <button id={idName} key={'buttonX'+indicator} onClick={handleLocation}>X</button>
          </>  : null
       }
    </>   

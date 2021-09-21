@@ -1,35 +1,13 @@
-.Wrapper_techInfo {
-   margin-top: 20px;
-   display: flex;
-   flex-direction: column;
-   /* position: relative;  hide relative*/
-}
+
+$tech-main: rgba(102, 98, 8, 0.7);
+$tech-border: rgba(255, 255, 255, 0.3);
+$tech-shadowBlock: rgba(0, 0, 0, 0.20);
+$TechBackground-Hover: rgba(130, 125, 20, 0.9);
+$TechBorder-Hover: rgba(255, 255, 255, 1);
 
 ._techInfo {
-   background-color: rgba(255, 242, 0, 0.700);
+   background-color: $tech-main;
 }
-
-.itemName_techInfo {
-   position: sticky;
-   border-radius: 5px;
-   top: 60px;
-   display: flex;
-   width: 100%;
-   height: fit-content;
-   justify-content: flex-start;
-   color: rgb(0, 0, 0);
-   animation: show 1.5s ;
-}   
-
-.itemName_techInfo > p { 
-   font-size: 1em;
-   display: inline-block;
-   background-color: rgba(255, 255, 255, 0.65);
-   width: fit-content;
-   height: fit-content;
-   padding: 5px;
-   border-radius: 5px;
-}   
 
 .items_techInfo {
    display: flex;
@@ -37,10 +15,10 @@
    flex-wrap: wrap;
    margin: 0 auto;
    width: 100%;
-   border: 1px solid rgba(255, 255, 255, 0.3);
+   border: 1px solid $tech-border;
    border-radius: 5px;
    margin-bottom: 10px;
-   background-color: rgba(255, 242, 0, 0.5);
+   background-color: $tech-main;
 }
 
 .item_techInfo{
@@ -56,7 +34,7 @@
    min-width: 200px;
    max-width: fit-content;
    width: auto;
-   background-color: rgba(0, 0, 0, 0.20);
+   background-color: $tech-shadowBlock;
 }
 
 .item_techInfo > p { 
@@ -65,16 +43,13 @@
    font-size: 2em;
 }
 
-#goback_techInfo:hover {
-   border: 1px solid rgba(255, 255, 255, 1);
-   background-color: rgba(255, 242, 0, 0.7);
+._techInfo:hover {
+   border: 1px solid $TechBorder-Hover;
+   background-color: $TechBackground-Hover;
    transform: translate(5px, 0px) scale(1.1);
    transition-duration: .5s;
 }
 
-.technologiesItem {
-   background-color: rgba(255, 242, 0, 0.5);
-}
 
 #skils_techDetailInfo {
    text-align: center;
@@ -96,6 +71,16 @@
    z-index: 3;
 }
 
+.technologiesItem {
+   background-color: $tech-main;
+}
+
 .technologiesItemDetail {
-   background-color: rgba(255, 242, 0, 0.700);
+   background-color: $tech-main;
+   transition-duration: .5s;
+}
+
+.technologiesItemDetail:hover {
+   background-color: $TechBackground-Hover;
+   transition-duration: .5s;
 }

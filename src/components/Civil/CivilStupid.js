@@ -31,7 +31,7 @@ export const CivilInfoStupid = (props) => {
             </div>
             )
             }) : 
-            <div key={'CivilsItemUnit'+civilStupid} className={civilizations+'NoItem'}>
+            <div key={'CivilsItemUnit'+civilStupid} className={`noItem forUnit${civilizations}`}>
                <p>У цивилизации нет уникальных юнитов</p>
             </div>
          }
@@ -43,7 +43,7 @@ export const CivilInfoStupid = (props) => {
                </div>
                )
             }) :  
-            <div key={'CivilsItemNoTech'+civilStupid} className={civilizations+'NoItem'}>
+            <div key={'CivilsItemNoTech'+civilStupid} className={`noItem forTech${civilizations}`}>
                <p>У цивилизации нет уникальных технологий</p>
             </div>
          }
@@ -59,7 +59,7 @@ export const CivilUnitDetailStupid = (props) => {
       <ul key={'Skils'+civDetailinfo} id='Skils'>
          <ButtonClose
             handleLocation={handleLocation}
-            idName={'Skils'}
+            idName={'SkilsBut'}
             indicator={civDetailinfo}
             selector={Civilerror} /> 
 
@@ -95,7 +95,7 @@ export const CivilTechDetailStupid = (props) => {
          <ul key={'Skils'+civDetailinfo} id='Skils'>
             <ButtonClose
                handleLocation={handleLocation}
-               idName={'Skils'}
+               idName={'SkilsBut'}
                indicator={civDetailinfo}
                selector={Civilerror} />
 

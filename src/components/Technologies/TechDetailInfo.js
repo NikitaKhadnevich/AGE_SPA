@@ -29,14 +29,18 @@ const TechDetailInfo = (props) => {
                      handleLocation={handleLocation}
                      idName={'SkilsBut'}
                      indicator={techDetailInfo} 
-                     selector={TechError}/>
-                  {dataDetail.map((item,i) => {
-                     return (          
-                        <ul key={'Skils'+techDetailInfo+i} id={`Skils${i}`}>
-                           <TechDetailStupid item={item} handleLocation={handleLocation} />
-                        </ul>
-                     )
-                  })}
+                     selector={TechError}
+                     dataDetail={TechDataDetail}/>
+               
+               {dataDetail.map((item,i) => {
+                  return (          
+                     <ul key={'Skils'+techDetailInfo+i} id={`Skils ${i}`}>
+                        <TechDetailStupid
+                           item={item}
+                           handleLocation={handleLocation} />
+                     </ul>
+                  )})
+               }
                </div>
             </> 
             : (dataDetail.id && !fetchStatus) ?
@@ -46,9 +50,10 @@ const TechDetailInfo = (props) => {
             : (!fetchStatus) ?
                <ButtonClose
                   handleLocation={handleLocation}
-                  idName={'Skils'}
+                  idName={'SkilsBut'}
                   indicator={techDetailInfo}
-                  selector={TechError}/>       
+                  selector={TechError}
+                  dataDetail={TechDataDetail}/>     
          : null }
       </>
    )

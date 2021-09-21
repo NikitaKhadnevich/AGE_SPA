@@ -1,0 +1,54 @@
+$structure-main: rgba(48, 125, 48, 0.7);
+$structure-border: rgba(255, 255, 255, 0.3);
+$structure-shadowBlock: rgba(0, 0, 0, 0.20);
+$StructureBackground-Hover: rgba(65, 160, 60, 0.9);
+$StructureBorder-Hover: rgba(255, 255, 255, 1);
+
+._structureInfo {
+   background-color: $structure-main;
+}
+
+.items_structureInfo {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   width: 100%;
+   border: 1px solid $structure-border;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   background-color: $structure-main;
+}
+
+.item_structureInfo{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 5px;
+   justify-content: center;
+   text-align: center;
+   margin: 15px;
+   border-radius: 10px;
+   padding: 20px;
+   animation: show 2s;
+   min-width: 200px;
+   max-width: fit-content;
+   width: auto;
+   background-color: $structure-shadowBlock;
+}
+
+.item_structureInfo > p { 
+   display: inline-block;
+   color: rgb(255, 255, 255);
+   font-size: 2em;
+}
+
+._structureInfo:hover {
+   border: 1px solid $StructureBorder-Hover;
+   background-color: $StructureBackground-Hover;
+   transform: translate(5px, 0px) scale(1.1);
+   transition-duration: .5s;
+}
+
+.structuresItem {
+   background-color: $structure-main;
+}

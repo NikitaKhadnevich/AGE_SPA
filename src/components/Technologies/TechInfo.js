@@ -44,7 +44,7 @@ const TechInfo = (props) => {
          { data && data.map((item,i) => {
             if (params.id === item.name+item.id) {
                return (
-                  <div key={'Wrapper'+techInfo} className={'Wrapper'+techInfo}>
+                  <div key={'Wrapper'+techInfo} className={`detailWrapper detailFor${techInfo}`}>
                      <ButtonGoBack 
                         key={'button'+techInfo} 
                         handleLocation={handleLocation} 
@@ -52,7 +52,7 @@ const TechInfo = (props) => {
                         indicator={techInfo}/>
 
                      <div key={'Items'+techInfo} className={'items'+techInfo} >   
-                        <div key={'ItemName'+techInfo} className={'itemName'+techInfo}>
+                        <div key={'ItemName'+techInfo} className={`elementName`}>
                            <p key={params.id+techInfo+'name'}>Технология {item.name}</p>
                         </div>
                         <div key={'Items'+techInfo} className={'item'+techInfo}>

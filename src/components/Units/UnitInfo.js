@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, useHistory, useParams} from 'react-router-dom';
 import { ACTION_GET_UNIT_Requested, ACTION_GET_UNIT_DETAIL_Requested, ACTION_GET_ROUTE_UNIT_MENU} from '../../ducks/units/actions';
 import { Unitsdata, Unitspath } from '../../ducks/units/selectors'
-import UnitDetailInfo from '../Units/UnitDetailInfo'
+import UnitDetailInfo from './UnitDetailInfo'
 import { UnitsStupid } from './UnitsStupid'
 import  { baseUrl, Urlpath } from '../Api/Api'
 import { ButtonGoBack, indicator} from '../SmallElems/SmallElems'
 
 
-const UnitSkill = (props) => {
+const UnitInfo = (props) => {
    const history = useHistory();
    const params = useParams()
    const dataUnit  = useSelector(Unitsdata)
@@ -44,14 +44,14 @@ const UnitSkill = (props) => {
       { dataUnit && dataUnit.map((item,i) => {
          if (params.id === (item.name+item.id)) {
             return (
-               <div key={'Wrapper'+unitSkil} className={'Wrapper'+unitSkil}>
+               <div key={'Wrapper'+unitSkil} className={`detailWrapper detailFor${unitSkil}`}>
                   <ButtonGoBack 
                      handleLocation={handleLocation}
                      idName={unitSkil}
                      indicatorKey={unitSkil}/>
 
                   <div key={'Items'+unitSkil} className={'items'+unitSkil} > 
-                     <div key={'ItemName'+unitSkil} className={'itemName'+unitSkil}>
+                     <div key={'ItemName'+unitSkil} className={`elementName`}>
                         <p key={params.id+unitSkil+'name'}>Технология {item.name}</p>
                      </div> 
                      <div key={'Items'+unitSkil} className={'item'+unitSkil} >
@@ -72,4 +72,4 @@ const UnitSkill = (props) => {
    )
 }
 
-export default UnitSkill
+export default UnitInfo

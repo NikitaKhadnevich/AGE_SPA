@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { debugContextDevtool } from 'react-context-devtool';
 
-import './index.css'
-import './components/Structure/structure.css'
-import './components/Technologies/technologies.css'
-import './components/Units/units.css'
-import './components/Civil/civil.css'
+import './index.scss'
 
 import AppWithBackgroundVideo from './assets/BackVideo'
 import store from './store';

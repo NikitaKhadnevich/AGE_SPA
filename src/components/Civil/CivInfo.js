@@ -69,14 +69,14 @@ const CivInfo = (props) => {
          if (params.id === (item.name+item.id)) {
             return (
                <>
-               <div key={'Wrapper'+civInfo} className={'Wrapper'+civInfo}>
+               <div key={'Wrapper'+civInfo} className={`detailWrapper detailFor${civInfo}`}>
                   <ButtonGoBack 
                      handleLocation={handleLocation}
                      idName={civInfo}
                      indicator={civInfo}/>
 
                   <div key={'Items'+civInfo} className={'items'+civInfo} >
-                     <div key={'ItemName'+civInfo} className={'itemName'+civInfo}>
+                     <div key={'ItemName'+civInfo} className={`elementName`}>
                         <p key={params.id+civInfo+'name'}>Сооружение {item.name}</p>
                      </div>
                      <div key={'Items'+civInfo+i} className={'item'+civInfo}>

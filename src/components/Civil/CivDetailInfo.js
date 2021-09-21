@@ -37,8 +37,10 @@ const CivDetailInfo = (props) => {
             : (!$.id && !fetchStatus) ?
                <ButtonClose 
                   handleLocation={handleLocation}
-                  idName={'Skils'} indicator={civDetailinfo}
-                  selector={Civilerror} detailData={CivildataDetail}/>
+                  idName={'SkilsBut'}
+                  indicator={civDetailinfo}
+                  selector={Civilerror}
+                  detailData={CivildataDetail}/>
             : null
          }
       </>

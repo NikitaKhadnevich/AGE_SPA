@@ -8,7 +8,7 @@ import Civil from './components/Civil/Civil';
 import CivInfo from './components/Civil/CivInfo';
 
 import Units from './components/Units/Units';
-import UnitSkill from './components/Units/UnitSkil';
+import UnitInfo from './components/Units/UnitInfo';
 
 import Structure from './components/Structure/Structure';
 import StructureInfo from './components/Structure/StructureInfo';
@@ -36,7 +36,7 @@ const Posts = () => {
               <Route path='/civilizations/:id/' component={CivInfo} />
   
               <Route exact path='/units' component={Units} />
-              <Route path='/units/:id' component={UnitSkill} />
+              <Route path='/units/:id' component={UnitInfo} />
 
               <Route exact path='/structures' component={Structure} />
               <Route exact path='/structures/:id' component={StructureInfo} /> 

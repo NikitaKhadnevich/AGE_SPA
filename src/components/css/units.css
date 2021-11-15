@@ -1,0 +1,92 @@
+._unitSkil {
+  background-color: rgba(0, 154, 185, 0.7);
+}
+
+.items_unitSkil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 154, 185, 0.7);
+}
+
+.item_unitSkil {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-animation: show 2s;
+          animation: show 2s;
+  min-width: 200px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.item_unitSkil > p {
+  display: inline-block;
+  color: white;
+  font-size: 2em;
+}
+
+._unitSkil:hover {
+  border: 1px solid white;
+  background-color: rgba(20, 170, 200, 0.9);
+  -webkit-transform: translate(5px, 0px) scale(1.1);
+          transform: translate(5px, 0px) scale(1.1);
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+.unitsItem {
+  background-color: rgba(0, 154, 185, 0.7);
+}
+
+.unitsItemDetail {
+  background-color: rgba(0, 154, 185, 0.7);
+}
+
+.unitsItemDetail:hover {
+  background-color: rgba(20, 170, 200, 0.9);
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+#skils_unitDetailInfo {
+  text-align: center;
+  color: white;
+  margin: 0;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  z-index: 3;
+}

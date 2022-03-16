@@ -1,19 +1,16 @@
-import React from 'react';
-import Posts from '../App'
-import back from '../assets/video/back.mp4'
+import React from "react";
+import back from "../assets/video/back.mp4";
 
 const AppWithBackgroundVideo = () => {
-
-   return (
-      <>
-         <video id="backgroundVideo" loop muted autoPlay>
-            <source src={back} type='video/mp4' />  
-         </video>
-      </>
-   )
-}
-export default AppWithBackgroundVideo
-
+  return (
+    <>
+      <video id="backgroundVideo" loop muted autoPlay>
+        <source src={back} type="video/mp4" />
+      </video>
+    </>
+  );
+};
+export default AppWithBackgroundVideo;
 
 /* Вариант написания через модули, удобен при расширении приложения */
 // import React from 'react';
@@ -31,7 +28,7 @@ export default AppWithBackgroundVideo
 //             <div className={classes.SubContent} >
 //                <Posts />
 //             </div>
-//          </div>      
+//          </div>
 //       </div>
 //    )
 // }

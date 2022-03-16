@@ -1,9 +1,10 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+/* eslint-disable no-unused-vars */
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import createSagaMiddleware from "redux-saga";
 
-import rootReducer from './rootReducer';
-import rootSaga from './rootSaga';
-import { initialState } from './initialState';
+import rootReducer from "./rootReducer";
+import rootSaga from "./rootSaga";
+import { initialState } from "./initialState";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -11,11 +12,11 @@ const enhancers = [];
 
 const middlewares = [sagaMiddleware];
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   // eslint-disable-next-line no-underscore-dangle
   const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
 
-  if (typeof devToolsExtension === 'function') {
+  if (typeof devToolsExtension === "function") {
     enhancers.push(devToolsExtension());
   }
 }

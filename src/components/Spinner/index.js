@@ -1,33 +1,31 @@
-import React from 'react';
-import { connect, useSelector } from 'react-redux';
+/* eslint-disable no-unused-vars */
+import React from "react";
+import { connect, useSelector } from "react-redux";
 
-import { CivilisFetching } from '../../ducks/civil/selectors'
-import { StructuresisFetching } from '../../ducks/structures/selectors'
-import { TechisFetching } from '../../ducks/technologies/selectors'
-import { UnitsisFetching } from '../../ducks/units/selectors'
-
+import { CivilisFetching } from "../../ducks/civil/selectors";
+import { StructuresisFetching } from "../../ducks/structures/selectors";
+import { TechisFetching } from "../../ducks/technologies/selectors";
+import { UnitsisFetching } from "../../ducks/units/selectors";
 
 const SpinnerHome = (props) => {
-  const { smallElem } = props
+  const { smallElem } = props;
   const civilFetch = useSelector(CivilisFetching);
   const strucFetch = useSelector(StructuresisFetching);
   const technFetch = useSelector(TechisFetching);
   const unitsFetch = useSelector(UnitsisFetching);
-  var accumFetch = {}
-  Object.defineProperty(accumFetch, 'status', {
-  get: function() { return civilFetch || strucFetch || technFetch || unitsFetch; },
-  enumerable: true,
-  configurable: false,
+  var accumFetch = {};
+  Object.defineProperty(accumFetch, "status", {
+    get: function () {
+      return civilFetch || strucFetch || technFetch || unitsFetch;
+    },
+    enumerable: true,
+    configurable: false,
   });
 
-  return (
-    <>
-      {accumFetch.status ? smallElem() : null}
-    </>
-  )
-}
+  return <>{accumFetch.status ? smallElem() : null}</>;
+};
 
-export default SpinnerHome
+export default SpinnerHome;
 
 /*******  Реализация таже, но на классах **********/
 // class SpinnerHome extends React.Component {

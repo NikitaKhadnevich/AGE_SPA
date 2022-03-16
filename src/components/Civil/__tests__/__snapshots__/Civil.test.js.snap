@@ -46,3 +46,50 @@ exports[`<Civil />  should are working Methods in Civil 1`] = `
   </Memo(ListAgeMemo)>
 </Civil>
 `;
+
+exports[`<Civil /> should are working Methods in Civil 1`] = `
+<Civil
+  Sort={[MockFunction]}
+  data={
+    Array [
+      1,
+      2,
+      3,
+      4,
+    ]
+  }
+  getFetch={[Function]}
+  match={
+    Object {
+      "url": "some http...",
+    }
+  }
+  useEffect={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          undefined,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <Memo(ListAgeMemo)
+    Sort={[Function]}
+    blockName="_civil"
+    elem="civilizations"
+    propsUrl="some http..."
+  >
+    <div
+      className="civilizationsWrapper"
+      key="civilizationsWrapper"
+    />
+  </Memo(ListAgeMemo)>
+</Civil>
+`;

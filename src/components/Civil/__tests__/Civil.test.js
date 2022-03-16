@@ -3,8 +3,8 @@ import Civil from "../Civil";
 import { Civildata } from "../../../ducks/civil/selectors";
 import { configure, shallow, mount } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-configure({ adapter: new Adapter() });
-import configureMockStore from "redux-mock-store"; //ES6 modules
+import configureMockStore from "redux-mock-store";
+configure({ adapter: new Adapter() }); //ES6 modules
 
 jest.mock("../../../ducks/civil/selectors");
 const mockFnDispatch = jest.fn();
@@ -17,7 +17,7 @@ jest.mock("react-redux", () => ({
   useEffect: () => mockFnEffect,
 }));
 
-describe("<Civil /> ", () => {
+describe("<Civil />", () => {
   const mockFn = jest.fn();
   const props = {
     match: {

@@ -3,9 +3,9 @@ import { Provider } from "react-redux";
 import SpinnerHome from "../../Spinner/index";
 import { configure, shallow, mount } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-configure({ adapter: new Adapter() });
 import { connect } from "react-redux";
-import configureMockStore from "redux-mock-store"; //ES6 modules
+import configureMockStore from "redux-mock-store";
+configure({ adapter: new Adapter() }); //ES6 modules
 
 const newTimeout = 6000;
 jest.setTimeout(newTimeout);

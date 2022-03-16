@@ -1,0 +1,85 @@
+$unit-main: rgba(0, 154, 185, 0.7);
+$unit-border: rgba(255, 255, 255, 0.3);
+$unit-shadowBlock: rgba(0, 0, 0, 0.20);
+$UnitBackground-Hover: rgba(20, 170, 200, 0.9);
+$UnitBorder-Hover: rgba(255, 255, 255, 1);
+
+._unitSkil {
+   background-color: $unit-main;
+}
+
+.items_unitSkil {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   width: 100%;
+   border: 1px solid $unit-border;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   background-color: $unit-main;
+}
+
+.item_unitSkil{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 5px;
+   justify-content: center;
+   text-align: center;
+   margin: 15px;
+   border-radius: 10px;
+   padding: 20px;
+   animation: show 2s;
+   min-width: 200px;
+   max-width: fit-content;
+   width: auto;
+   background-color: $unit-shadowBlock;
+}
+
+.item_unitSkil > p { 
+   display: inline-block;
+   color: rgb(255, 255, 255);
+   font-size: 2em;
+}
+
+._unitSkil:hover {
+   border: 1px solid $UnitBorder-Hover;
+   background-color: $UnitBackground-Hover;
+   transform: translate(5px, 0px) scale(1.1);
+   transition-duration: .5s;
+}
+
+.unitsItem {
+   background-color: $unit-main;
+}
+
+.unitsItemDetail {
+   background-color: $unit-main;
+}
+
+.unitsItemDetail:hover {
+   background-color: $UnitBackground-Hover;
+   transition-duration: .5s;
+}
+
+
+#skils_unitDetailInfo {
+   text-align: center;
+   color:rgb(255, 255, 255);
+   margin: 0;
+   font-size: 2em;
+   background-color: rgba(0, 0, 0, 0.85);
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   right:0;
+   -webkit-animation-duration: 0.5s;
+   animation-duration: 0.5s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+   -webkit-animation-name: fadeIn;
+   animation-name: fadeIn;
+   z-index: 3;
+}
+

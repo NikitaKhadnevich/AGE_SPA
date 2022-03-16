@@ -8,7 +8,7 @@ import Civil from './components/Civil/Civil';
 import CivInfo from './components/Civil/CivInfo';
 
 import Units from './components/Units/Units';
-import UnitSkill from './components/Units/UnitSkil';
+import UnitInfo from './components/Units/UnitInfo';
 
 import Structure from './components/Structure/Structure';
 import StructureInfo from './components/Structure/StructureInfo';
@@ -17,11 +17,11 @@ import Technologies from './components/Technologies/Technologies'
 import TechInfo from './components/Technologies/TechInfo'
 
 
-const App = () => {
+const Posts = () => {
   return (
     <>
       <Router>
-        <div className='Posts'>
+        <div className='posts'>
           <div className='navigation'>
             <Link to='/'>К истокам</Link>
             <Link to='/civilizations' data-path='/civilizations'>Цивилизации</Link>
@@ -33,13 +33,13 @@ const App = () => {
               <Route exact path='/' component={Home} />
 
               <Route exact path='/civilizations' component={Civil} />
-              <Route path='/civilizations/:id/' component={CivInfo } />
+              <Route path='/civilizations/:id/' component={CivInfo} />
   
               <Route exact path='/units' component={Units} />
-              <Route path='/units/:id' component={UnitSkill} />
+              <Route path='/units/:id' component={UnitInfo} />
 
               <Route exact path='/structures' component={Structure} />
-              <Route path='/structures/:id' component={StructureInfo} /> 
+              <Route exact path='/structures/:id' component={StructureInfo} /> 
 
               <Route exact path='/technologies' component={Technologies} />
               <Route path='/technologies/:id/' component={TechInfo} />
@@ -50,4 +50,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Posts;

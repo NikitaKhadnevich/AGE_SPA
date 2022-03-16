@@ -142,10 +142,6 @@ ul {
   perspective: 300px;
 }
 
-.social > a:hover {
-  transform: rotateY(45deg);
-}
-
 .goback {
   position: sticky;
   top: 15px;
@@ -251,14 +247,36 @@ ul {
   margin: 0 auto;
   border-radius: 5px;
   transition-duration: 0.7s;
+  min-width: 250px;
+  padding: 0 10px;
+  @media screen and (max-width: 768px) {
+    max-width: 220px;
+    min-width: 220px;
+  }
+  @media screen and (max-width: 425px) {
+    max-width: 150px;
+    min-width: 150px;
+    height: 30px;
+  }
 }
 
 .civilizationsItemDetail > a,
 .unitsItemDetail > a,
 .structuresItemDetail > a,
 .technologiesItemDetail > a {
-  min-width: fit-content;
-  padding: 0 25px;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  @media screen and (max-width: 425px) {
+    max-width: 170px;
+    min-width: 170px;
+    font-size: 0.65rem;
+    height: 30px;
+  }
 }
 
 .skilsWrap,

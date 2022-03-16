@@ -1,64 +1,69 @@
 $civil-main: rgba(220, 20, 60, 0.7);
 $civil-border: rgba(255, 255, 255, 0.3);
-$civil-shadowBlock: rgba(0, 0, 0, 0.20);
+$civil-shadowBlock: rgba(0, 0, 0, 0.2);
 $CivilBackground-Hover: rgba(255, 40, 80, 0.9);
 $CivilBorder-Hover: rgba(255, 255, 255, 1);
 
 ._civInfo {
-   background-color: $civil-main;
+  background-color: $civil-main;
 }
 
-.items_civInfo  {
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
-   margin: 0 auto;
-   width: 100%;
-   border: 1px solid $civil-border;
-   border-radius: 5px;
-   margin-bottom: 10px;
-   background-color: $civil-main;
+.items_civInfo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid $civil-border;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: $civil-main;
 }
 
-.item_civInfo  {
-   display: grid;
-   grid-template-columns: 1fr;
-   grid-gap: 5px;
-   justify-content: center;
-   text-align: center;
-   margin: 15px;
-   border-radius: 10px;
-   padding: 20px;
-   animation: show 2s;
-   min-width: 200px;
-   max-width: fit-content;
-   width: auto;
-   background-color: $civil-shadowBlock;
+.item_civInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  justify-content: center;
+  text-align: center;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 20px;
+  animation: show 2s;
+  min-width: 200px;
+  max-width: fit-content;
+  width: auto;
+  background-color: $civil-shadowBlock;
 }
 
-.item_civInfo > p { 
-   display: inline-block;
-   color: rgb(255, 255, 255);
-   font-size: 2em;
+.item_civInfo > p {
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  font-size: 2em;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5em;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 1em;
+  }
 }
 
 ._civInfo:hover {
-   border: 1px solid $CivilBorder-Hover;
-   background-color: $CivilBackground-Hover;
-   transform: translate(5px, 0px) scale(1.1);
-   transition-duration: .5s;
+  border: 1px solid $CivilBorder-Hover;
+  background-color: $CivilBackground-Hover;
+  transform: translate(5px, 0px) scale(1.1);
+  transition-duration: 0.5s;
 }
 
-.civilizationsItem{
-   background-color: $civil-main;
+.civilizationsItem {
+  background-color: $civil-main;
 }
 
 .civilizationsItemDetail {
-   background-color: $civil-main;
+  background-color: $civil-main;
 }
 
 .civilizationsItemDetail:hover {
-   background-color: $CivilBackground-Hover;
-   transition-duration: .5s;
+  background-color: $CivilBackground-Hover;
+  transition-duration: 0.5s;
 }
-
